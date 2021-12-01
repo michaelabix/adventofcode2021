@@ -1,6 +1,3 @@
-#import
-
-#set global variables
 measurements = []
 
 def read_input():
