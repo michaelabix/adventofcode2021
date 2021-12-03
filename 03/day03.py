@@ -22,11 +22,9 @@ def part1(input):
 		else:
 			print("something went wrong or positives and zero cannot be equal")
 		x += 1
-	gamma_num = int(gamma, 2)
-	epsilon_num = int(epsilon, 2)
-	return gamma_num * epsilon_num
+	return int(gamma, 2) * int(epsilon, 2)
 
-def oxygen(values):
+def rating(values, gas):
 	input = values.copy()
 	x = 0
 	length = len(input[0])
@@ -37,7 +35,9 @@ def oxygen(values):
 			temp.append(i[x])
 		positive = temp.count("1")
 		zero = temp.count("0")
-		if positive > zero or positive == zero:
+		if (positive > zero or positive == zero) and gas == "o":
+			keep = "1"
+		elif positive < zero and gas == "c":
 			keep = "1"
 		for index, i in reversed(list(enumerate(input))):
 			if i[x] != keep:
@@ -45,28 +45,9 @@ def oxygen(values):
 		x += 1
 	return int(input[0], 2)
 	
-def co2(values):
-	input = values.copy()
-	x = 0
-	length = len(input[0])
-	while (x < length) and (len(input) > 1):
-		temp = []
-		keep = "0"
-		for i in input:
-			temp.append(i[x])
-		positive = temp.count("1")
-		zero = temp.count("0")
-		if positive < zero:
-			keep = "1"
-		for index, i in reversed(list(enumerate(input))):
-			if i[x] != keep:
-				input.pop(index)
-		x += 1
-	return int(input[0], 2)
-
 def part2(input):
-	o2 = oxygen(input)
-	c = co2(input)
+	o2 = rating(input, "o")
+	c = rating(input, "c")
 	return c * o2
 	
 def main():
