@@ -12,6 +12,7 @@ def read_input():
 	integers = [*zip(input[::2], input[1::2])]
 	return integers
 
+#grid size
 def calc_max(input):
 	x = set()
 	y = set()
@@ -21,6 +22,7 @@ def calc_max(input):
 			y.add(p[1])
 	return max(y) + 1, max(x) + 1
 
+#find answer
 def calc(vents):
 	ans = (vents > 1).sum()
 	return ans
@@ -42,6 +44,7 @@ def plot_vents(input, part):
 			while i <= v_sorted[1][0]:
 				vents[v_sorted[0][1], i] += 1
 				i += 1
+		#diagonal 45 degree angle
 		elif abs(p[0][0] - p[1][0]) == abs(p[0][1] - p[1][1]) and part == 2:
 			h_sorted = tuple(sorted(p, key = lambda x: x[0]))
 			i = h_sorted[0][1]
