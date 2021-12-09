@@ -31,12 +31,6 @@ def calc(input):
 				start_coordinates.append((ind, ind2))
 	return low_points, start_coordinates
 
-def check_coords(input, coords):
-	if input[coords[0]][coords[1]] == 9:
-		return 0
-	else:
-		return 1
-
 def part1(input):
 	low_points = calc(input)[0]
 	answer = 0
