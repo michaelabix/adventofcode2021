@@ -61,7 +61,7 @@ def part2(input):
 				if input[left[0]][left[1]] != 9 and left not in coords:
 					coords.append(left)
 			if right[1] < items and right[1] >= 0:
-				if input[s[0]][s[1] + 1] != 9 and right not in coords:
+				if input[right[0]][right[1]] != 9 and right not in coords:
 					coords.append(right)
 		sums.append(len(coords))
 	sums.sort(reverse = True)
