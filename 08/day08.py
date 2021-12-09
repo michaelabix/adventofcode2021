@@ -103,7 +103,7 @@ def part2(input):
 def main():
 	input = read_input()
 	print("the answer to part 1 is: " + str(part1(input)))
-	print("the answer to part 2 is: " + str(part2(input,)))
+	print("the answer to part 2 is: " + str(part2(input)))
 
 if __name__ == "__main__":
 	main()
