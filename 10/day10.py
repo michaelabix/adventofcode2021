@@ -37,7 +37,6 @@ def part2(incomplete, vals):
 	for i in incomplete:
 		answer = 0
 		last_open = []
-		close = ""
 		for char in i:
 			if char in vals.keys():
 				last_open.append(char)
